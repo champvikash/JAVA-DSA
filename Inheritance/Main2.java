@@ -1,4 +1,4 @@
-package com.example.mycode.Inheritance;
+package com.example.mycode.matrix.Inheritance;
 
 public class Main2 {
     public void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.example.mycode.GreedyAlgorithms;
+package com.example.mycode.matrix.GreedyAlgorithms;
 
 import java.util.Arrays;
 

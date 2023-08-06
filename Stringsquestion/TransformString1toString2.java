@@ -1,4 +1,4 @@
-package com.example.mycode.Stringsquestion;
+package com.example.mycode.matrix.Stringsquestion;
 
 public class TransformString1toString2 {
 

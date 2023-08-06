@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
 // leetcode 38 -> https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 

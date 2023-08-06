@@ -1,4 +1,4 @@
-package com.example.mycode.arrays;
+package com.example.mycode.matrix.arrays;
 
 import java.util.ArrayList;
 

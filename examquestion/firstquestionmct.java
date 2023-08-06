@@ -1,4 +1,4 @@
-package com.example.mycode.examquestion;
+package com.example.mycode.matrix.examquestion;
 
 public class firstquestionmct {
     public static void main(String[] args) {

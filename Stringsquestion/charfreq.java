@@ -1,4 +1,4 @@
-package com.example.mycode.Stringsquestion;
+package com.example.mycode.matrix.Stringsquestion;
 
  public class charfreq {
     static final int SIZE = 26;

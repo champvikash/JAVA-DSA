@@ -1,4 +1,4 @@
-package com.example.mycode.BinarySerachTree;
+package com.example.mycode.matrix.BinarySerachTree;
 
 public class insertinBST {
     public static void main(String[] args) {

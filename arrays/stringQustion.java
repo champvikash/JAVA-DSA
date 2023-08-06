@@ -1,4 +1,4 @@
-package com.example.mycode.arrays;
+package com.example.mycode.matrix.arrays;
 
 public class stringQustion {
     public static void main(String[] args) {

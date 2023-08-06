@@ -1,4 +1,4 @@
-package com.example.mycode.OOPs;
+package com.example.mycode.matrix.OOPs;
 
 import java.util.ArrayList;
 import java.util.Scanner;

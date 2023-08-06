@@ -1,4 +1,4 @@
-package com.example.mycode.Tree;
+package com.example.mycode.matrix.Tree;
 //Inorde ->   LEFT ROOT RIGHT
 public class Inordertravrse {
     public static void main(String[] args) {

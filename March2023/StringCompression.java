@@ -1,4 +1,4 @@
-package com.example.mycode.March2023;
+package com.example.mycode.matrix.March2023;
 
 import java.util.HashMap;
 import java.util.Map;

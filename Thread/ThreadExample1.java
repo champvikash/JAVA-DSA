@@ -1,4 +1,4 @@
-package com.example.mycode.Thread;
+package com.example.mycode.matrix.Thread;
 
 public class ThreadExample1 extends Thread{
     public void run(){

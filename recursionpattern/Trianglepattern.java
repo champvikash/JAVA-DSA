@@ -1,4 +1,4 @@
-package com.example.mycode.recursionpattern;
+package com.example.mycode.matrix.recursionpattern;
 
 public class Trianglepattern {
 

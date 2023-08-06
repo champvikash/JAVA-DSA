@@ -1,7 +1,7 @@
-package com.example.mycode.BinarySerachTree;
+package com.example.mycode.matrix.BinarySerachTree;
 
 
-import static com.example.mycode.BinarySerachTree.insertinBST.inorder;
+import static com.example.mycode.matrix.BinarySerachTree.insertinBST.inorder;
 
 public class deletionBST {
     public static void main(String[] args) {

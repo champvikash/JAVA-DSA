@@ -1,4 +1,4 @@
-package com.example.mycode.Abstraction;
+package com.example.mycode.matrix.Abstraction;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 // leetcode 1389 https://leetcode.com/problems/create-target-array-in-the-given-order/
 import java.util.Arrays;
 import java.util.Scanner;

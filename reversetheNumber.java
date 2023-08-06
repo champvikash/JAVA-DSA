@@ -1,4 +1,4 @@
-package com.example.mycode.stack;
+package com.example.mycode.matrix.stack;
 
 import java.util.Scanner;
 import java.util.Stack;

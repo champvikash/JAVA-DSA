@@ -1,7 +1,7 @@
-package com.example.mycode;
+package com.example.mycode.matrix.matrix;
 // question  Find in Mountain Array
 // link leetcode -> https://leetcode.com/problems/find-in-mountain-array/
-public class FindinMountainArrayleetcode {
+class FindinMountainArrayleetcode {
     public static void main(String[] args) {
 
         int arr[]={1,2,3,4,5,9,8,7};

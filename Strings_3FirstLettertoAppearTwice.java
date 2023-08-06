@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
 import java.util.HashSet;
 import java.util.Scanner;

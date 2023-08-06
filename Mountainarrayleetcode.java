@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
 //question number 853
 // link->  https://leetcode.com/problems/peak-index-in-a-mountain-array/

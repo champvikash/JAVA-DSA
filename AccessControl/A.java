@@ -1,4 +1,4 @@
-package com.example.mycode.AccessControl;
+package com.example.mycode.matrix.AccessControl;
 
 public class A {
     private int num;

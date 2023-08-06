@@ -1,4 +1,4 @@
-package com.example.mycode.staticexample;
+package com.example.mycode.matrix.staticexample;
 
 public class Main {
     public static void main(String[] args) {

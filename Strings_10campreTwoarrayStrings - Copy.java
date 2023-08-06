@@ -1,6 +1,6 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
-public class Strings_10campreTwoarrayStrings {
+ class Strings_10campreTwoarrayStringss {
 
     public static void main(String[] args) {
 

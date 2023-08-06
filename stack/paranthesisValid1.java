@@ -1,8 +1,8 @@
-package com.example.mycode.stack;
+package com.example.mycode.matrix.stack;
 
 import java.util.Stack;
 
-public class paranthesisValid {
+public class paranthesisValid1 {
     public static void main(String[] args) {
         String str = "{([])}";
         System.out.println(isValid(str));

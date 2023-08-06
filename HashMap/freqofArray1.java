@@ -1,9 +1,9 @@
-package com.example.mycode.HashMap;
+package com.example.mycode.matrix.HashMap;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class freqofArray {
+public class freqofArray1 {
 
     public static void main(String[] args) {
         int[] arr = {1,2,2,3,3,3,4};

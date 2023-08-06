@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
 public class missingFirstpositivenumber {
 
@@ -29,5 +29,4 @@ public class missingFirstpositivenumber {
         arr[first] = arr[second];
         arr[second] = temp;
     }
-}
 }

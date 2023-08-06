@@ -1,4 +1,4 @@
-package com.example.mycode.Tree;
+package com.example.mycode.matrix.Tree;
 // Post Order -> LEFT RIGHT ROOT
 public class postOrder {
     public static void main(String[] args) {

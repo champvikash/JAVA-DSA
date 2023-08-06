@@ -1,4 +1,4 @@
-package com.example.mycode.LinkedList;
+package com.example.mycode.matrix.LinkedList;
 //Naive solution
 //in this solution we are using two for loop
 // time complexity will be n.n/2 = n^2;

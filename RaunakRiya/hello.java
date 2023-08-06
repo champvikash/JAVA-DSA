@@ -1,4 +1,4 @@
-package com.example.mycode.RaunakRiya;
+package com.example.mycode.matrix.RaunakRiya;
 
 public class hello {
 

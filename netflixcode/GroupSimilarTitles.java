@@ -1,4 +1,4 @@
-package com.example.mycode.javaInterviewcode.netflixcode;
+package com.example.mycode.matrix.netflixcode;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 // question  Find in Mountain Array
 // link leetcode -> https://leetcode.com/problems/find-in-mountain-array/
 public class FindinMountainArrayleetcode {

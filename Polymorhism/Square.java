@@ -1,4 +1,4 @@
-package com.example.mycode.Polymorhism;
+package com.example.mycode.matrix.Polymorhism;
 
 public class Square extends Shapes{
 

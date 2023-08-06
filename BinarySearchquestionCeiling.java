@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
 /*
 * QUESTION -> find the floor number of array arr={2,3,5,9,14,16,18} target=15.

@@ -1,4 +1,4 @@
-package com.example.mycode.packages.A;
+package com.example.mycode.matrix.A;
 
 public class B1 {
     public static void main(String[] args) {

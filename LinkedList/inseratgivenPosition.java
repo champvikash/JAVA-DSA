@@ -1,4 +1,4 @@
-package com.example.mycode.LinkedList;
+package com.example.mycode.matrix.LinkedList;
 
 public class inseratgivenPosition {
     public static void main(String[] args) {

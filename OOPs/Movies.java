@@ -1,4 +1,4 @@
-package com.example.mycode.OOPs;
+package com.example.mycode.matrix.OOPs;
 
 public class Movies {
     public static void main(String[] args) {

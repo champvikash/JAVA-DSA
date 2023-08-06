@@ -1,4 +1,4 @@
-package com.example.mycode.LinkedList;
+package com.example.mycode.matrix.LinkedList;
 //TC=0(N)
 public class middleofLL1 {
     public static void main(String[] args) {

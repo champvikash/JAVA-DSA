@@ -1,4 +1,4 @@
-package com.example.mycode.Subarray;
+package com.example.mycode.matrix.Subarray;
 
 import java.util.Scanner;
 

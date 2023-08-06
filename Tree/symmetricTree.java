@@ -1,4 +1,4 @@
-package com.example.mycode.Tree;
+package com.example.mycode.matrix.Tree;
 
 public class symmetricTree {
     public static void main(String[] args) {

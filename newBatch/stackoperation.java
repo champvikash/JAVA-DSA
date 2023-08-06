@@ -1,4 +1,4 @@
-package com.example.mycode.newBatch;
+package com.example.mycode.matrix.newBatch;
 
 import java.util.Stack;
 

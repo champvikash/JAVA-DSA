@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
 //amazon question Find position of an element in a sorted array of infinite numbers
 //question link ->  https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/

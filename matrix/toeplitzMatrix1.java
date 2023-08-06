@@ -1,6 +1,8 @@
+//leetcode 776
+//link : https://leetcode.com/problems/toeplitz-matrix/
 package com.example.mycode.matrix;
 
-public class toeplitzMatrix {
+public class toeplitzMatrix1 {
     public static void main(String[] args) {
         int [][] matrix = { {1,2,3,4},
                             {5,1,2,3},

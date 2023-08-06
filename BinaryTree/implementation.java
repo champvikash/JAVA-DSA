@@ -1,4 +1,4 @@
-package com.example.mycode.BinaryTree;
+package com.example.mycode.matrix.BinaryTree;
 
 // Binary Search Tree operations in Java
 

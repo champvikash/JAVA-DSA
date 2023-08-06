@@ -1,4 +1,4 @@
-package com.example.mycode.Tree;
+package com.example.mycode.matrix.Tree;
 
 class Node{
     int key;

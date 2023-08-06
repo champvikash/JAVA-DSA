@@ -1,4 +1,4 @@
-package com.example.mycode.DynamicProgramming;
+package com.example.mycode.matrix.DynamicProgramming;
 import java.util.Arrays;
 public class fibonacci {
     static int[] memo;

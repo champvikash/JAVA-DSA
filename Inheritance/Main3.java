@@ -1,4 +1,4 @@
-package com.example.mycode.Inheritance;
+package com.example.mycode.matrix.Inheritance;
 
 public class Main3 {
     Dog d = new Dog("Red");

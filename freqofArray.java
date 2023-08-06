@@ -1,4 +1,4 @@
-package com.example.mycode.HashMap;
+package com.example.mycode.matrix;
 
 import java.util.HashMap;
 import java.util.Map;

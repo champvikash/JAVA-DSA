@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
 public class SpecialPositionsinaBinaryMatrix {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.example.mycode.Subarray;
+package com.example.mycode.matrix.Subarray;
 //Largest Sum Contiguous Subarray (Kadane’s Algorithm)
 //https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
 import java.util.Scanner;

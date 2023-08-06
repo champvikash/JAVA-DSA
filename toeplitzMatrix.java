@@ -1,4 +1,4 @@
-package com.example.mycode.matrix;
+package com.example.mycode.matrix.matrix;
 
 public class toeplitzMatrix {
     public static void main(String[] args) {

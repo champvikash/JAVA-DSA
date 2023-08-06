@@ -1,4 +1,4 @@
-package com.example.mycode.AmazingCodes;
+package com.example.mycode.matrix.AmazingCodes;
 
 import java.util.Random;
 

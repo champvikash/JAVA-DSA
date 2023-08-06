@@ -1,4 +1,4 @@
-package com.example.mycode.BinaryHeap;
+package com.example.mycode.matrix.BinaryHeap;
 class Test {
 
     public static class MinHeap{

@@ -1,4 +1,4 @@
-package com.example.mycode.queue;
+package com.example.mycode.matrix.queue;
 
 import java.util.LinkedList;
 import java.util.Queue;

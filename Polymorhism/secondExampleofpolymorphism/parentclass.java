@@ -1,4 +1,4 @@
-package com.example.mycode.Polymorhism.secondExampleofpolymorphism;
+package com.example.mycode.matrix.Polymorhism.secondExampleofpolymorphism;
 
 class Parent{
     void show(){

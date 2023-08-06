@@ -1,4 +1,4 @@
-package com.example.mycode.LinkedList;
+package com.example.mycode.matrix.LinkedList;
 
 public class insertatLast {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class insertatLast {
         printlist(head);
     }
 
-    private static void printlist(Node head) {
+    private static void printlist(Node head)  {
         Node curr=head;
         while(curr!=null){
             System.out.print(curr.data+" ");

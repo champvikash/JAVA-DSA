@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 
 // https://leetcode.com/problems/third-maximum-number/
 

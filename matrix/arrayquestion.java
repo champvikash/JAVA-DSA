@@ -1,4 +1,4 @@
-package com.example.mycode.matrix;
+package com.example.mycode.matrix.matrix;
 
 import java.util.Stack;
 

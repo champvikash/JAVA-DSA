@@ -1,4 +1,4 @@
-package com.example.mycode.Synchonization;
+package com.example.mycode.matrix.Synchonization;
 
 public class withSynchronization {
     public static void main(String[] args) {

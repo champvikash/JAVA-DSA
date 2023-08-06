@@ -1,6 +1,6 @@
-package com.example.mycode.recursionpattern;
+package com.example.mycode.matrix.recursionpattern;
 
-public class removeParticularcharfromstring {
+public class removeParticularcharfromstring1 {
 
     public static void main(String[] args) {
 //       skip("", "bacapp");

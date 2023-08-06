@@ -1,4 +1,4 @@
-package com.example.mycode.LinkedList;
+package com.example.mycode.matrix.LinkedList;
 class Node{
     int data;
     Node next;
@@ -18,7 +18,7 @@ public class BasicImplementation_1 {
         Node temp = head;
         while(temp != null){
 //          System.out.print( temp.data + " ");
-            System.out.println(temp + " : " + temp.data+" : "+temp.next);
+            System.out.println(temp + " : " + temp.data+" : ");
             temp =  temp.next;
         }
     }

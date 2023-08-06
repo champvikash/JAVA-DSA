@@ -1,4 +1,4 @@
-package com.example.mycode.codingNinja;
+package com.example.mycode.matrix.codingNinja;
 // question link: https://www.codingninjas.com/codestudio/contests/codestudio-weekend-contest-47/6826323/problems/22471
 public class maxElement {
 

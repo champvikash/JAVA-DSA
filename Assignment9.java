@@ -1,4 +1,4 @@
-package com.example.mycode;
+package com.example.mycode.matrix;
 // link: https://leetcode.com/problems/container-with-most-water/
 //question number 11
 public class Assignment9 {

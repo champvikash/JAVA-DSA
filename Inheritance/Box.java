@@ -1,4 +1,4 @@
-package com.example.mycode.Inheritance;
+package com.example.mycode.matrix.Inheritance;
 class Box {
     public double weight;
     double h;

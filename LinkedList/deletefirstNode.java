@@ -1,4 +1,4 @@
-package com.example.mycode.LinkedList;
+package com.example.mycode.matrix.LinkedList;
 public class deletefirstNode {
     public static void main(String[] args) {
         Node head=new Node(10);

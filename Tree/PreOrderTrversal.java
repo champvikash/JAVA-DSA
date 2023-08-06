@@ -1,4 +1,4 @@
-package com.example.mycode.Tree;
+package com.example.mycode.matrix.Tree;
 // Inorder -> ROOT LEFT RIGHT;
 public class PreOrderTrversal {
     public static void main(String[] args) {

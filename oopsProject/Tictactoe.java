@@ -1,4 +1,4 @@
-package com.example.mycode.oopsProject;
+package com.example.mycode.matrix.oopsProject;
 
 import java.util.* ;
 import java.io.* ;
