@@ -1,0 +1,1226 @@
+import java.util.*;
+class Solution {
+    public static List<List<String>> groupTitles(String[] strs){
+      if (strs.length == 0)
+            return new ArrayList<List<String>>();
+
+        Map<String, List<String>> res = new HashMap<String, List<String>>();
+
+        int[] count = new int[26];
+        for (String s : strs) {
+            Arrays.fill(count, 0);
+            for (char c : s.toCharArray()){
+                int index = c - 'a';
+                count[index]++;
+            }
+
+            StringBuilder delimStr = new StringBuilder("");
+            for (int i = 0; i < 26; i++) {
+                delimStr.append('#');
+                delimStr.append(count[i]);
+            }
+
+            String key = delimStr.toString();
+            if (!res.containsKey(key))
+                res.put(key, new ArrayList<String>());
+
+            res.get(key).add(s);
+        }
+
+        return new ArrayList<List<String>>(res.values());
+    }
+
+    public static void main(String[] args) {
+        // Driver code
+        String titles[] = {"duel","dule","speed","spede","deul","cars"};
+
+        List<List<String>> gt = groupTitles(titles);
+        String query = "spede";
+
+        // Searching for all titles
+        for (List<String> g : gt){
+            if (g.contains(query))
+                System.out.println(g);
+        }
+  }
+}
+
+
+Feature #2: Fetch Top Movies
+
+class MergeSortList{
+  public static LinkedListNode merge2Country(LinkedListNode l1, LinkedListNode l2) {
+    LinkedListNode dummy = new LinkedListNode(-1);
+
+    LinkedListNode prev = dummy;
+    while (l1 != null && l2 != null) {
+        if (l1.data <= l2.data) {
+            prev.next = l1;
+            l1 = l1.next;
+        } else {
+            prev.next = l2;
+            l2 = l2.next;
+        }
+        prev = prev.next;
+    }
+
+    if (l1 == null)
+      prev.next = l2;
+    else
+      prev.next = l1;
+
+    return dummy.next;
+  }
+
+  public static LinkedListNode mergeKCounty(List<LinkedListNode> lists) {
+
+    if (lists.size() > 0){
+      LinkedListNode res = lists.get(0);
+
+      for (int i = 1; i < lists.size(); i++)
+        res = merge2Country(res, lists.get(i));
+
+      return res;
+    }
+    return new LinkedListNode(-1);
+  }
+
+  public static void main(String[] args) {
+
+    LinkedListNode a = LinkedList.createLinkedList(new int[] {11,41,51});
+
+    LinkedListNode b = LinkedList.createLinkedList(new int[] {21,23,42});
+
+    LinkedListNode c = LinkedList.createLinkedList(new int[] {25,56,66,72});
+
+    List<LinkedListNode> list1 = new ArrayList<LinkedListNode>();
+    list1.add(a);
+    list1.add(b);
+    list1.add(c);
+
+    System.out.print("All movie ID's from best to worse are:\n");
+    LinkedList.display(mergeKCounty(list1));
+  }
+}
+
+
+using linkedlist java
+
+import java.util.*;
+
+class LinkedListNode {
+    public int key;
+    public int data;
+    public LinkedListNode next;
+    public LinkedListNode arbitraryPointer;
+
+    public LinkedListNode(int data) {
+        this.data = data;
+        this.next = null;
+    }
+
+    public LinkedListNode(int key, int data) {
+        this.key = key;
+        this.data = data;
+        this.next = null;
+    }
+
+    public LinkedListNode(int data, LinkedListNode next) {
+        this.data = data;
+        this.next = next;
+    }
+
+    public LinkedListNode(int data, LinkedListNode next, LinkedListNode arbitraryPointer) {
+        this.data = data;
+        this.next = next;
+        this.arbitraryPointer = arbitraryPointer;
+    }
+}
+
+
+
+class LinkedList {
+
+    public static LinkedListNode insertAtHead(LinkedListNode head, int data) {
+        LinkedListNode newNode = new LinkedListNode(data);
+        newNode.next = head;
+        return newNode;
+    }
+
+    public static LinkedListNode insertAtTail(LinkedListNode head, int data) {
+        LinkedListNode newNode = new LinkedListNode(data);
+        if (head == null) {
+            return newNode;
+        }
+        LinkedListNode temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+        return head;
+    }
+
+    public static LinkedListNode insertAtTail(LinkedListNode head, LinkedListNode node)
+    {
+        if (head == null) {
+            return node;
+        }
+        LinkedListNode temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = node;
+        return head;
+    }
+
+    public static LinkedListNode createLinkedList(ArrayList<Integer> lst) {
+        LinkedListNode head = null;
+        LinkedListNode tail = null;
+        for (Integer x : lst) {
+            LinkedListNode newNode = new LinkedListNode(x);
+            if (head == null) {
+                head = newNode;
+            } else {
+                tail.next = newNode;
+            }
+            tail = newNode;
+        }
+        return head;
+    }
+
+    public static LinkedListNode createLinkedList(int[] arr) {
+        LinkedListNode head = null;
+        LinkedListNode tail = null;
+        for (int i = 0; i < arr.length; ++i) {
+            LinkedListNode newNode = new LinkedListNode(arr[i]);
+            if (head == null) {
+                head = newNode;
+            } else {
+                tail.next = newNode;
+            }
+            tail = newNode;
+        }
+        return head;
+    }
+
+    public static LinkedListNode createRandomList(int length) {
+        LinkedListNode listHead = null;
+        Random generator = new Random();
+        for(int i = 0; i < length; ++i) {
+            listHead = insertAtHead(listHead, generator.nextInt(100));
+        }
+        return listHead;
+    }
+
+    public static ArrayList<Integer> toList(LinkedListNode head) {
+        ArrayList<Integer> lst = new ArrayList<Integer>();
+        LinkedListNode temp = head;
+        while (temp != null) {
+            lst.add(temp.data);
+            temp = temp.next;
+        }
+        return lst;
+    }
+
+    public static void display(LinkedListNode head) {
+        LinkedListNode temp = head;
+        while (temp != null) {
+            System.out.printf("%d", temp.data);
+            temp = temp.next;
+            if (temp != null) {
+              System.out.printf(", ");
+            }
+        }
+        System.out.println();
+    }
+
+
+    public static LinkedListNode mergeAlternating(LinkedListNode list1, LinkedListNode list2) {
+      if (list1 == null) {
+        return list2;
+      }
+
+      if (list2 == null) {
+        return list1;
+      }
+
+      LinkedListNode head = list1;
+
+      while (list1.next != null && list2 != null) {
+        LinkedListNode temp = list2;
+        list2 = list2.next;
+
+        temp.next = list1.next;
+        list1.next = temp;
+        list1 = temp.next;
+      }
+
+      if (list1.next == null) {
+        list1.next = list2;
+      }
+
+      return head;
+    }
+
+    static boolean isEqual(LinkedListNode list1, LinkedListNode list2) {
+        if (list1 == list2) {
+            return true;
+        }
+
+        while (list1 != null && list2 != null) {
+            if (list1.data != list2.data) {
+                return false;
+            }
+
+            list1 = list1.next;
+            list2 = list2.next;
+        }
+
+        return (list1 == list2);
+    }
+}
+
+Feature #3: Find Median Age
+
+import java.util.*;
+
+class MedianOfAges {
+
+  PriorityQueue<Integer> smallList; //containing first half of numbers
+  PriorityQueue<Integer> largeList; //containing second half of numbers
+
+  public MedianOfAges() {
+    smallList = new PriorityQueue<>((a, b) -> b - a);
+    largeList = new PriorityQueue<>((a, b) -> a - b);
+  }
+
+  public void insertNum(int num) {
+    if (smallList.isEmpty() || smallList.peek() >= num)
+      smallList.add(num);
+    else
+      largeList.add(num);
+
+    // either both the heaps will have equal number of elements or max-heap will have one
+    // more element than the min-heap
+    if (smallList.size() > largeList.size() + 1)
+      largeList.add(smallList.poll());
+    else if (smallList.size() < largeList.size())
+      smallList.add(largeList.poll());
+  }
+
+  public double findMedian() {
+    if (smallList.size() == largeList.size()) {
+      // we have even number of elements, take the average of middle two elements
+      return smallList.peek() / 2.0 + largeList.peek() / 2.0;
+    }
+    // because max-heap will have one more element than the min-heap
+    return smallList.peek();
+  }
+
+  public static void main(String[] args) {
+    // Driver code
+
+    MedianOfAges MedianOfAges = new MedianOfAges();
+    MedianOfAges.insertNum(22);
+    MedianOfAges.insertNum(35);
+    System.out.println("The recommended content will be for ages under: " + MedianOfAges.findMedian());
+    MedianOfAges.insertNum(30);
+    System.out.println("The recommended content will be for ages under: " + MedianOfAges.findMedian());
+    MedianOfAges.insertNum(25);
+    System.out.println("The recommended content will be for ages under: " + MedianOfAges.findMedian());
+  }
+}
+
+
+Feature #4: Popularity Analysis
+
+class Solution {
+    public static boolean identifyTitles(int[] scores) {
+
+        boolean increasing = true;
+        boolean decreasing = true;
+
+        for (int i = 0; i < scores.length - 1; i++) {
+            if (scores[i] > scores[i+1])
+                increasing = false;
+            if (scores[i] < scores[i+1])
+                decreasing = false;
+        }
+
+        return (increasing || decreasing);
+    }
+    public static void main( String args[] ) {
+        // Driver code
+
+        int[][] movie_ratings = {
+            {1,2,2,3},
+            {4,5,6,3,4},
+            {8,8,7,6,5,4,4,1}
+        };
+        for (int[] movie_rating : movie_ratings){
+            if (identifyTitles(movie_rating))
+                System.out.println("Title Identified and Separated");
+            else
+                System.out.println("Title Score Fluctuating");
+        }
+    }
+}
+
+Feature #5: Fetch Most Recently Watched Titles
+class LRUCache {
+  int capacity;
+  HashMap<Integer, LinkedListNode> cache;
+  MyLinkedList cacheVals;
+
+  public LRUCache(int capacity) {
+    this.capacity = capacity;
+    cache = new HashMap<Integer, LinkedListNode>(capacity);
+    cacheVals = new MyLinkedList();
+  }
+
+  LinkedListNode Get(int key) {
+    if(!cache.containsKey(key)){
+      return null;
+    }
+    else {
+      int value = cache.get(key).data;
+      cacheVals.removeNode(cache.get(key));
+      cacheVals.insertAtTail(key, value);
+      return cacheVals.getTail();
+    }
+  }
+
+  void Set(int key, int value) {
+    if (!cache.containsKey(key)){
+      evictIfNeeded();
+      cacheVals.insertAtTail(key, value);
+      cache.put(key, cacheVals.getTail());
+    }
+    else {
+      cacheVals.removeNode(cache.get(key));
+      cacheVals.insertAtTail(key, value);
+      cache.put(key, cacheVals.getTail());
+    }
+  }
+
+  void evictIfNeeded(){
+    if(cacheVals.size >= capacity) {
+      LinkedListNode node = cacheVals.removeHead();
+      cache.remove(node.key);
+    }
+  }
+
+  void print() {
+    LinkedListNode curr = cacheVals.head;
+
+    while(curr != null){
+        System.out.print("(" + curr.key + "," + curr.data + ")");
+        curr = curr.next;
+    }
+    System.out.println("");
+  }
+  public static void main(String[] args){
+    LRUCache cache = new LRUCache(3);
+    System.out.print("The most recently watched titles are: (key, value)");
+    cache.Set(10,20);
+    cache.print();
+
+    cache.Set(15,25);
+    cache.print();
+
+    cache.Set(20,30);
+    cache.print();
+
+    cache.Set(25,35);
+    cache.print();
+
+    cache.Set(5,40);
+    cache.print();
+
+    cache.Get(25);
+    cache.print();
+  }
+}
+
+#using limkedlist
+
+public class MyLinkedList {
+    public LinkedListNode head;
+    public LinkedListNode tail;
+    public int size;
+
+    public MyLinkedList(){
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
+    }
+
+    public void insertAtHead(int key, int data) {
+        LinkedListNode newNode = new LinkedListNode(key, data);
+        if(this.head == null){
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else{
+            newNode.next = this.head;
+            this.head.prev = newNode;
+            this.head = newNode;
+        }
+        this.size++;
+    }
+
+    public void insertAtTail(int key, int data) {
+        LinkedListNode newNode = new LinkedListNode(key, data);
+        if (this.tail == null){
+            this.tail = newNode;
+            this.head = newNode;
+            newNode.next = null;
+            newNode.prev = null;
+        }
+
+        else{
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+            newNode.next = null;
+        }
+        this.size++;
+    }
+
+    public LinkedListNode getHead(){
+        return this.head;
+    }
+
+    public LinkedListNode getTail(){
+        return this.tail;
+    }
+
+    public LinkedListNode removeNode(LinkedListNode node){
+        if(node == null){
+            return null;
+        }
+
+        if(node.prev != null){
+            node.prev.next = node.next;
+        }
+
+        if(node.next != null){
+            node.next.prev = node.prev;
+        }
+
+        if(node == this.head){
+            this.head = this.head.next;
+        }
+        if(node == this.tail){
+            this.tail = this.tail.prev;
+        }
+        this.size--;
+        return node;
+    }
+
+    public void remove(int data){
+        LinkedListNode i = this.getHead();
+        while(i != null){
+            if(i.data == data){
+                this.removeNode(i);
+            }
+            i = i.next;
+        }
+    }
+
+    public LinkedListNode removeHead(){
+        return this.removeNode(this.head);
+    }
+
+    public LinkedListNode removeTail(){
+        return this.removeNode(this.tail);
+    }
+}
+
+#using linkedlistnodejava
+
+class LinkedListNode {
+    public int key;
+    public int data;
+    public LinkedListNode next;
+    public LinkedListNode prev;
+
+    public LinkedListNode(int data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+
+    public LinkedListNode(int key, int data) {
+        this.key = key;
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+
+    public LinkedListNode(int data, LinkedListNode next) {
+        this.data = data;
+        this.next = next;
+        this.prev = null;
+    }
+
+    public LinkedListNode(int data, LinkedListNode next, LinkedListNode prev) {
+        this.data = data;
+        this.next = next;
+        this.prev = prev;
+    }
+}
+
+Feature #6: Fetch Most Frequently Watched Titles
+class LFUCache {
+    int capacity;
+    int size;
+    int minFreq;
+    //LinkedListNode holds key and value pairs
+    HashMap<Integer, LinkedListNode> keyDict;
+
+    HashMap<Integer, MyLinkedList> freqDict;
+    public LFUCache(int capacity) {
+      this.capacity = capacity;
+      this.size = 0;
+      this.minFreq = 0;
+      keyDict = new HashMap<Integer, LinkedListNode>(capacity);
+      freqDict = new HashMap<Integer, MyLinkedList>(capacity);
+    }
+
+    LinkedListNode Get(int key) {
+        if(!keyDict.containsKey(key)){
+          	return null;
+        }
+        LinkedListNode temp = this.keyDict.get(key);
+        this.freqDict.get(temp.freq).deleteNode(temp);
+        if(this.freqDict.get(this.keyDict.get(key).freq) == null){
+            this.freqDict.remove(this.keyDict.get(key).freq);
+            if(this.minFreq == this.keyDict.get(key).freq){
+                this.minFreq += 1;
+            }
+        }
+        this.keyDict.get(key).freq += 1;
+        if(!this.freqDict.containsKey(this.keyDict.get(key).freq)){
+            this.freqDict.put(this.keyDict.get(key).freq, new MyLinkedList());
+        }
+        this.freqDict.get(this.keyDict.get(key).freq).append(this.keyDict.get(key));
+        return this.keyDict.get(key);
+    }
+
+    void Set(int key, int value) {
+        if(this.Get(key) != null){
+            this.keyDict.get(key).val = value;
+            return;
+        }
+        if(this.size == this.capacity){
+            this.keyDict.remove(this.freqDict.get(this.minFreq).head.key);
+            this.freqDict.get(this.minFreq).deleteNode(this.freqDict.get(this.minFreq).head);
+            if(this.freqDict.get(this.minFreq) == null){
+                this.freqDict.remove(this.minFreq);
+            }
+            this.size -= 1;
+        }
+        this.minFreq = 1;
+        this.keyDict.put(key, new LinkedListNode(key, value, this.minFreq));
+        if(!this.freqDict.containsKey(this.keyDict.get(key).freq)){
+            this.freqDict.put(this.keyDict.get(key).freq, new MyLinkedList());
+        }
+        this.freqDict.get(this.keyDict.get(key).freq).append(this.keyDict.get(key));
+        this.size++;
+    }
+
+    void print() {
+        for (Map.Entry<Integer, LinkedListNode> entry : keyDict.entrySet()) {
+            System.out.print("(" + entry.getKey() + ", " + entry.getValue().val + ")");
+        }
+        System.out.println("");
+    }
+
+    public static void main(String[] args){
+        LFUCache cache = new LFUCache(2);
+        System.out.print("The most frequently watched titles are: (key, value)\n");
+        cache.Set(1, 1);
+        cache.Set(2, 2);
+        cache.print();
+        cache.Get(1);
+        cache.Set(3, 3);
+        cache.print();
+        cache.Get(2);
+        cache.Set(4, 4);
+
+        cache.Get(1);
+        cache.Get(3);
+        cache.Get(4);
+        cache.print();
+    }
+  }
+
+#using linkedlist java
+
+public class MyLinkedList{
+
+    public LinkedListNode head;
+    public LinkedListNode tail;
+    public MyLinkedList(){
+        this.head = null;
+        this.tail = null;
+    }
+
+    public void append(LinkedListNode node){
+        node.next = null;
+        node.prev = null;
+        if(this.head == null){
+            this.head = node;
+        }
+        else{
+            this.tail.next = node;
+            node.prev = this.tail;
+        }
+        this.tail = node;
+    }
+
+    public void deleteNode(LinkedListNode node){
+        if(node.prev != null){
+            node.prev.next = node.next;
+        }
+        else{
+            this.head = node.next;
+        }
+        if(node.next != null){
+            node.next.prev = node.prev;
+        }
+        else{
+            this.tail = node.prev;
+        }
+        node.next = null;
+        node.prev = null;
+    }
+}
+
+3.
+public class LinkedListNode {
+    public int key;
+    public int val;
+    public int freq;
+    public LinkedListNode next;
+    public LinkedListNode prev;
+
+
+    public LinkedListNode(int key, int val, int freq) {
+        this.key = key;
+        this.val = val;
+        this.freq = freq;
+        this.next = null;
+        this.prev = null;
+    }
+
+}
+
+
+Feature #7: Browse Ratings
+class Solution {
+  public static void main(String args[]) {
+
+    maxStack stack = new maxStack(7);
+    stack.push(5);
+    stack.push(0);
+    stack.push(2);
+    stack.push(4);
+    stack.push(6);
+    stack.push(3);
+    stack.push(10);
+
+    System.out.println("Maximum Rating: " + stack.maxRating());
+
+    stack.pop();
+    System.out.println("\nAfter clicking back button\n");
+
+    System.out.println("Maximum Rating: " + stack.maxRating());
+
+  }
+}
+
+2.
+public class maxStack {
+    int maxSize;
+    Stack<Integer> mainStack;
+    Stack<Integer> maxStack;
+    //constructor
+    public maxStack(int maxSize) {
+        //We will use two stacks mainStack to hold original values
+        //and maxStack to hold maximum values. Top of maxStack will always
+        //be the maximum value from mainStack
+        this.maxSize = maxSize;
+        mainStack = new Stack<>(maxSize);
+        maxStack = new Stack<>(maxSize);
+    }
+    //removes and returns value from stack
+    public int pop(){
+        //1. Pop element from maxStack to make it sync with mainStack,
+        //2. Pop element from mainStack and return that value
+        maxStack.pop();
+        return mainStack.pop();
+    }
+    //pushes value into the stack
+    public void push(Integer value){
+        //1. Push value in mainStack and check value with the top value of maxStack
+        //2. If value is greater than top, then push top in maxStack
+        //else push value in maxStack
+        mainStack.push(value);
+        if(!maxStack.isEmpty() && maxStack.top() > value)
+            maxStack.push(maxStack.top());
+        else
+            maxStack.push(value);
+    }
+    //returns maximum value in O(1)
+    public int maxRating(){
+        return maxStack.top();
+    }
+}
+
+3.
+ public class Stack<V> {
+    private int maxSize;
+    private int top;
+    private V[] array;
+    private int currentSize;
+
+    /*
+    Java does not allow generic type arrays. So we have used an
+    array of Object type and type-casted it to the generic type V.
+    This type-casting is unsafe and produces a warning.
+    Comment out the line below and execute again to see the warning.
+    */
+    @SuppressWarnings("unchecked")
+    public Stack(int maxSize) {
+        this.maxSize = maxSize;
+        this.top = -1; //initially when stack is empty
+        array = (V[]) new Object[maxSize];//type casting Object[] to V[]
+        this.currentSize = 0;
+    }
+
+    public int getCurrentSize() {
+        return currentSize;
+    }
+
+    //returns the maximum size capacity
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    //returns true if Stack is empty
+    public boolean isEmpty() {
+        return top == -1;
+    }
+
+    //returns true if Stack is full
+    public boolean isFull() {
+        return top == maxSize - 1;
+    }
+
+    //returns the value at top of Stack
+    public V top() {
+        if (isEmpty())
+            return null;
+        return array[top];
+    }
+
+    //inserts a value to the top of Stack
+    public void push(V value) {
+        if (isFull()) {
+            System.err.println("Stack is Full!");
+            return;
+        }
+        array[++top] = value; //increments the top and adds value to updated top
+        currentSize++;
+    }
+
+    //removes a value from top of Stack and returns
+    public V pop() {
+        if (isEmpty())
+            return null;
+        currentSize--;
+        return array[top--]; //returns value and top and decrements the top
+    }
+}
+
+
+Feature #8: Verify User Session
+import java.util.*;
+
+class Solution {
+    public static boolean verifySession(int[] pushOp, int[] popOp) {
+
+        int M = pushOp.length;
+        int N = popOp.length;
+        if (M != N)
+            return false;
+
+        Stack<Integer> stack = new Stack<Integer>();
+
+        int i = 0;
+        for (int pid: pushOp) {
+            stack.push(pid);
+            while (!stack.isEmpty() && stack.peek() == popOp[i]) {
+                stack.pop();
+                i++;
+            }
+        }
+
+        if (stack.isEmpty())
+            return true;
+        return false;
+    }
+
+    public static void main( String args[] ) {
+        // Driver code
+        int[] pushOp = {1,2,3,4,5};
+        int[] popOp = {5,4,3,2,1};
+
+        if (verifySession(pushOp, popOp) == true)
+            System.out.println( "Session Successfull!" );
+        else
+            System.out.println( "Session Faulty!" );
+    }
+}
+
+Feature #9: Movie Combinations of a Genre
+class Solution {
+  // Declaring the combinations variable
+  private static List<String> combinations = new ArrayList<String>();
+
+  static String[] list1 = {"Frozen", "Kung fu Panda", "Ice Age"};
+  static String[] list2 = {"Iron Man","Wonder Woman","Avengers"};
+  static String[] list3 = {"Jumangi", "Lion King", "Tarzan"};
+  static String[] list4 = {"Coco", "The Croods", "Vivi","Pets"};
+  static String[] list5 = {"Oculus", "Sinister","Insidious","Annebelle"};
+
+  private static HashMap<String, String[]> movies = new HashMap<>();
+
+  public static List<String> letterCombinations(String[] categories) {
+    // Return empty array if input is empty
+    if (categories.length == 0) {
+      return combinations;
+    }
+
+    // Mapping the categories to their corresponding movies
+    movies.put("Family", list1);
+    movies.put("Action", list2);
+    movies.put("Fantasy", list3);
+    movies.put("Comedy", list4);
+    movies.put("Horror", list5);
+
+    // Initiate backtracking with an empty path and starting index of 0
+    List<String> path = new ArrayList<String>();
+    backTrack(0, path, categories);
+    return combinations;
+  }
+
+  // Use backTrack function to generate all possible combinations
+  private static void backTrack(int index, List<String> path, String[] categories) {
+    // If the length of path and categories is same,
+    // we have a complete combinations
+    if (path.size() == categories.length) {
+      combinations.add(String.join("", path));
+      return;
+    }
+
+    // Using the index and categories[index], get the list of movies
+    String[] possibleMovies = movies.get(categories[index]);
+    // Loop through the movies and generate combinations
+    for(int i =0; i<possibleMovies.length; i++) {
+      // Add the movie to our current path
+      path.add(possibleMovies[i] + ";");
+      // Move on to the next category
+      backTrack(index + 1, path,categories);
+      // Before moving onto the next movie,
+      // backTrack by removing the movie from the path
+      if(path.size() > 0)
+        // RemoveIndex is used to remove the element from the path
+        path.remove(path.size() - 1);
+    }
+  }
+
+  public static void main(String[] args) {
+    //Example 1
+    String[] genres = {"Action"};
+    combinations = letterCombinations(genres);
+    System.out.println("Output 1:");
+    String output = "\"" + String.join("\",\"", combinations) + "\"";
+    System.out.println(output);
+
+    //Example 2;
+    String[] genres2 = {"Family", "Action"};
+    combinations = new ArrayList<String>();
+    combinations = letterCombinations(genres2);
+    System.out.println("Output 2:");
+    output = "\"" + String.join("\",\"", combinations) + "\"";
+    System.out.println(output);
+
+    //Example 3;
+    String[] genres3 = {"Horror", "Comedy"};
+    combinations = new ArrayList<String>();
+    combinations = letterCombinations(genres3);
+    System.out.println("Output 3:");
+    output = "\"" + String.join("\",\"", combinations) + "\"";
+    System.out.println(output);
+
+    //Example 4;
+    String[] genres4 = {"Horror", "Fantasy", "Comedy", "Family"};
+    combinations = new ArrayList<String>();
+    combinations = letterCombinations(genres4);
+    System.out.println("Output 4:");
+    output = "\"" + String.join("\",\"", combinations) + "\"";
+    System.out.println(output);
+  }
+}
+
+Feature #10: Calculate Median of Buffering Events
+class Solution{
+  public static double[] medianSlidingWindow(int[] nums, int k) {
+    // Will store the medians
+    List<Double> medians = new ArrayList<Double>();
+    // Hash-map will keep track of invalid numbers
+    HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
+    //max heap
+    PriorityQueue<Integer> smallList = new PriorityQueue<Integer>(Collections.reverseOrder());
+    //min heap
+    PriorityQueue<Integer> largeList = new PriorityQueue<Integer>();
+
+    // Index of current incoming element being processed
+    int i = 0;
+
+    // Initialize the smallList heap
+    while (i < k) {
+      smallList.add(nums[i]);
+      i++;
+    }
+
+    // Initialize the largeList heap
+    for (int j = 0; j < k / 2; j++) {
+      largeList.add(smallList.peek());
+      smallList.poll();
+    }
+
+    // Start an infinite loop
+    while (true) {
+      if ((k&1) == 1) {
+        medians.add((double)smallList.peek());
+      } else {
+        double temp = ((double)smallList.peek() + (double)largeList.peek()) * 0.5;
+        medians.add(temp);
+      }
+
+      // Break the loop if all of the elements are processed
+      if (i >= nums.length) {
+        break;
+      }
+
+       // Outgoing element
+      int outNum = nums[i - k];
+      // Incoming element
+      int inNum = nums[i];
+      i++;
+      // Balance factor
+      int balance = 0;
+
+      // Number `outNum` exits window
+      if (outNum <= smallList.peek()) {
+        balance += -1;
+      } else {
+        balance += 1;
+      }
+
+      /* If the outgoing element is not present in the hash-map
+      store the `outNum` in the hash-map with value 1,
+      otherwise increment the count of `outNum` in the hash-map.*/
+      if (hashMap.get(outNum) != null) {
+        int tempVal = hashMap.get(outNum) + 1;
+        hashMap.put(outNum, tempVal);
+      } else {
+        hashMap.put(outNum, 1);
+      }
+
+      // number `inNum` enters window
+      if (!smallList.isEmpty() && inNum <= smallList.peek()) {
+        balance++;
+        smallList.add(inNum);
+      } else {
+        balance--;
+        largeList.add(inNum);
+      }
+
+      // Re-balance smallList
+      if (balance < 0) {
+        smallList.add(largeList.peek());
+        largeList.poll();
+        balance++;
+      }
+
+      // Re-balance largeList
+      if (balance > 0) {
+        largeList.add(smallList.peek());
+        smallList.poll();
+        balance--;
+      }
+
+      // Remove invalid numbers that should be discarded from smallList heap tops
+      while (hashMap.get(smallList.peek()) != null && hashMap.get(smallList.peek()) > 0) {
+        int tempVal = hashMap.get(smallList.peek()) - 1;
+        hashMap.put(smallList.peek(), tempVal);
+        smallList.poll();
+      }
+
+      // Remove invalid numbers that should be discarded from largeList heap tops
+      while (!largeList.isEmpty() && hashMap.get(largeList.peek()) != null && hashMap.get(largeList.peek()) > 0) {
+        int tempVal = hashMap.get(largeList.peek()) - 1;
+        hashMap.put(largeList.peek(), tempVal);
+        largeList.poll();
+      }
+    }
+    // Return medians
+    double[] arr = medians.stream().mapToDouble(Double::doubleValue).toArray();
+    return arr;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Example - 1");
+    int[] arr = {1,3,-1,-3,5,3,6,7};
+    int k = 3;
+    System.out.println("Input: array =" + Arrays.toString(arr) + ", k = " + k);
+    double[] output = medianSlidingWindow(arr, k);
+    System.out.println("Output: Medians =" + Arrays.toString(output));
+
+    System.out.println("\nExample - 2");
+    int[] arr2 = {1,2};
+    k = 1;
+    System.out.println("Input: array =" + Arrays.toString(arr2) + ", k = " + k);
+    double[] output2 = medianSlidingWindow(arr2, k);
+    System.out.println("Output: Medians =" + Arrays.toString(output2));
+  }
+}
+
+Feature #11: Generate Movie Viewing Orders
+class Solution{
+  public static void backTrack(int first, int size, List<String> moviesList, List<List<String>> output) {
+    // If all strings of given array `moviesList` are used and
+    // and Backtracking is performed add the permutations to output array.
+    if (first == size) {
+      List<String> temp = new ArrayList<String>(moviesList);
+      output.add(temp);
+    }
+
+    // Perform Backtracking for the size of a given array.
+    for (int i = first; i < size; i++) {
+
+      // Swap: In the current permutation place i-th integer first.
+      Collections.swap(moviesList, first, i);
+
+      // Complete permutations using the next integers.
+      backTrack(first + 1, size, moviesList, output);
+
+      // Swap and Backtrack
+      Collections.swap(moviesList, first, i);
+    }
+  }
+
+  public static List<List<String>> generatePermutations(String[] movies) {
+    List<List<String>> output = new LinkedList<>();
+    int size = movies.length;
+
+    // convert movies into list since the output is a list of lists
+    ArrayList<String> moviesList = new ArrayList<String>();
+    for (String movie : movies)
+      moviesList.add(movie);
+
+    backTrack(0, size, moviesList, output);
+
+    return output;
+  }
+
+  public static void main(String[] args) {
+    // Example #1
+    String[] input = {"Frozen","Dune","Coco"};
+    List<List<String>> output = generatePermutations(input);
+    System.out.println("Output 1: " + output);
+
+    // Example #2
+    String[] input2 = {"Frozen","Dune","Coco","Melificient"};
+    output = generatePermutations(input2);
+    System.out.println("Output 2: " + output);
+
+    // Example #3
+    String[] input3 = {"Dune","Coco"};
+    output = generatePermutations(input3);
+    System.out.println("Output 3: " + output);
+  }
+}
+
+
+
+Feature #12: Maintain Continue Watching Bar
+class FreqStack {
+  // Declare a FreqStack class containing frequency and group hashmaps
+  // and maxFrequency integer
+  Map<String, Integer> frequency;
+  Map<Integer, Stack<String>> group;
+  int maxFrequency;
+
+  // Use constructor to initialize the FreqStack object
+  public FreqStack() {
+    frequency = new HashMap<>();
+    group = new HashMap<>();
+    maxFrequency = 0;
+  }
+
+  // Use push function to push the showName into the FreqStack
+  public void push(String showName) {
+    // Get the frequency for the given showName and
+    // increment the frequency for the given showName
+    int f = frequency.getOrDefault(showName, 0) + 1;
+    frequency.put(showName, f);
+
+    // Check if the maximum frequency is lower that the new frequency
+    // of the given show
+    if (f > maxFrequency)
+      maxFrequency = f;
+
+    // Save the given showName for the new calculated frequency
+    group.computeIfAbsent(f, z-> new Stack<>()).push(showName);
+  }
+
+  // Use the pop function to pop the showName from the FreqStack
+  public String pop() {
+    String show = "";
+    if (maxFrequency > 0) {
+      // Fetch the top of the group[maxFrequency] stack and
+      // pop the top of the group[maxFrequency] stack
+      show = group.get(maxFrequency).pop();
+
+      // Decrement the frequency after the show has been popped
+      frequency.put(show, frequency.get(show) - 1);
+      if (group.get(maxFrequency).size() == 0)
+        maxFrequency--;
+    }
+    return show;
+  }
+}
+
+class Solution {
+  public static void main(String[] args) {
+    FreqStack obj = new FreqStack();
+    obj.push("Queen's Gambit");
+    obj.push("Teen Wolf");
+    obj.push("Queen's Gambit");
+    obj.push("Teen Wolf");
+    obj.push("Bigderton");
+    obj.push("Queen's Gambit");
+
+    for (int i = 0; i < 7; i++) {
+      System.out.println("...User navigates to the browser...");
+      System.out.println("Continue Watching :" + obj.pop());
+      System.out.println();
+    }
+  }
+}
