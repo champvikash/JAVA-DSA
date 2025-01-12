@@ -2,6 +2,18 @@ package com.example.mycode.matrix.jan2025;
 
 import java.util.HashMap;
 
+/*
+LRU (Least Recently Used) is a caching algorithm
+used to manage a limited amount of memory in a way
+that keeps the most recently used data while discarding
+the least recently used data when the cache is full.
+
+Key Concept:
+Cache: A temporary storage area that stores frequently or recently used data for quick access.
+LRU: When the cache reaches its maximum capacity and a new item needs to be added, the least recently accessed item is removed to make space for the new one.
+
+* */
+
 public class LRUCache {
 
     private final int capacity;
@@ -112,7 +124,9 @@ public class LRUCache {
 
         lruCache.put(5, 50); // Evicts key 3
         System.out.println("Value for key 3: " + lruCache.get(3)); // Output: -1 Output: 10
-
+        System.out.println(lruCache.get(1));
+        System.out.println(lruCache.get(4));
+        System.out.println(lruCache.get(5));
 
     }
 }
